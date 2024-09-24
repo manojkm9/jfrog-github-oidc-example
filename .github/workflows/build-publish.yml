@@ -12,7 +12,7 @@ jobs:
      env:
       OIDC_AUDIENCE: 'jfrog-github'
       OIDC_PROVIDER: 'github'
-      PLATFORM_REPO: 'eks-npm'
+      PLATFORM_REPO: 'npm-npm-local'
      defaults:
       run:
         working-directory: ./package
@@ -26,7 +26,7 @@ jobs:
        - name: Setup JFrog CLI
          uses: jfrog/setup-jfrog-cli@v3
          env:  
-           JF_URL: ${{ secrets.JF_URL }}
+           JF_URL: http://10.160.0.29:8082
          with:
            oidc-provider-name: ${{ env.OIDC_PROVIDER }}
            oidc-audience: ${{ env.OIDC_AUDIENCE }}
